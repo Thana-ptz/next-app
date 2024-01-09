@@ -1,23 +1,34 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Head from "next/head";
+import styles from "styles/Home.module.css";
 
-export default function Home() {
+export default function Home({ liff, liffError }) {
   return (
-    <div className="container">
+    <div>
       <Head>
-        <title>Next.js Starter!</title>
+        <title>LIFF App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+      <main className={styles.main}>
+        <h1>create-liff-app</h1>
+        {liff && <p>LIFF init succeeded.</p>}
+        {liffError && (
+          <>
+            <p>LIFF init failed.</p>
+            <p>
+              <code>{liffError}</code>
+            </p>
+          </>
+        )}
+        <a
+          href="https://developers.line.biz/ja/docs/liff/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LIFF Documentation
+        </a>
       </main>
-
-      <Footer />
     </div>
-  )
+  );
 }
