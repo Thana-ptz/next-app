@@ -6,8 +6,8 @@ function Application({ Component, pageProps }) {
 
 export default Application
 */
-import "/styles/globals.css";
-import { useState, useEffect } from "react";
+import '@styles/globals.css';
+import { useState, useEffect } from 'react';
 
 function MyApp({ Component, pageProps }) {
   const [liffObject, setLiffObject] = useState(null);
